@@ -1,176 +1,71 @@
-# E-Commerce Sales Performance Analysis
+# E-Commerce Analysis
 
-An end-to-end data analytics project combining **Python (Pandas, NumPy), MySQL, and Power BI** to clean e-commerce order data, engineer sales metrics, query business performance, and present findings in an interactive dashboard.
-
-> **Project scope:** The uploaded materials demonstrate a Python data-cleaning workflow, MySQL analysis queries, and a Power BI dashboard. The source workbook used by the notebook was not included, so the complete pipeline has not been rerun end-to-end in this repository.
+An end-to-end e-commerce analytics project using **Jupyter Notebook, Python (Pandas, NumPy), MySQL, and Power BI**. The workflow explores data cleaning, feature engineering, SQL-based business analysis, and dashboard reporting.
 
 ## Dashboard
 
-![Original dashboard screenshot supplied by Suraj](dashboard/dashboard.png)
+![Original dashboard screenshot](dashboard/dashboard.png)
 
-This README is configured to display the exact original dashboard screenshot supplied by Suraj. The screenshot file itself still needs to be uploaded to `dashboard/dashboard.png`; no generated or redesigned preview should be used. The supplied report layout shows KPI cards for Total Sales, Total Profit, Total Orders, and Average Order Value; monthly sales; sales by payment mode, order status, product, and category; profit by category; location visualization; and Month, City, and Payment Mode slicers.
+The image above is the original dashboard screenshot supplied for this project, placed unchanged in the `dashboard/` folder. The Power BI report is stored alongside it.
 
 ## Tech Stack
 
-- **Python:** Pandas, NumPy
-- **SQL:** MySQL
-- **Business Intelligence:** Power BI, DAX
-- **Data workflow:** Jupyter Notebook, SQLAlchemy, PyMySQL
-
-## Workflow
-
-1. **Inspect the data** — check shape, column types, summary statistics, missing values, and duplicates.
-2. **Clean and standardize** — remove duplicates, normalize string fields, parse dates, coerce numeric columns, and filter invalid quantities.
-3. **Engineer metrics** — calculate gross sales, net amount after discount, estimated profit, order month, year, and weekday.
-4. **Export and load** — export a cleaned CSV and load the DataFrame into a local MySQL `orders` table.
-5. **Query business performance** — calculate overall sales and order counts, product and city rankings, monthly sales, product profit, payment-mode distribution, and cancelled orders.
-6. **Visualize** — explore high-level KPIs and sales breakdowns in Power BI.
+- **Jupyter Notebook** — interactive data exploration
+- **Python / Pandas / NumPy** — cleaning and feature engineering
+- **MySQL** — business queries and aggregation
+- **Power BI** — KPI reporting and interactive visualization
 
 ## Repository Structure
 
 ```text
-PowerBI-Ecommerce-Analysis/
-├── data/
-│   ├── Ecommerce_Unclean_Project.xlsx
-│   ├── Clean_Ecommerce.csv
-│   ├── sample_ecommerce.csv
-│   └── README.md
+Ecommerce-Analysis/
 ├── dashboard/
 │   ├── dashboard.png
 │   ├── ecommerce_sales_dashboard.pbix
+│   └── README.md
+├── data/
+│   ├── sample_ecommerce.csv
 │   └── README.md
 ├── docs/
 │   └── data-quality-notes.md
 ├── python/
 │   ├── project_end.ipynb
 │   ├── data_cleaning.py
+│   ├── pandas_query.png
 │   └── README.md
 ├── sql/
 │   ├── ecommerce_sales_analysis.sql
 │   ├── mysql_queries.png
 │   └── README.md
+├── requirements.txt
 ├── .gitignore
 ├── LICENSE
-├── README.md
-└── requirements.txt
+└── README.md
 ```
 
-## Dashboard Highlights
+> **Dataset status:** The full original workbook and cleaned CSV are not currently present in this GitHub repository. The data folder currently contains the sample CSV only. Add the approved, privacy-reviewed source files to `data/` before claiming that the full workflow can be reproduced from a fresh clone.
 
-- **KPI cards:** Total Sales, Total Profit, Total Orders, Average Order Value
-- **Trend analysis:** Sales by month
-- **Product and category analysis:** Sales by product and category; profit by category
-- **Operational breakdowns:** Order status and payment mode
-- **Geographic view:** Map visual
-- **Interactive filters:** Month, City, Payment Mode
+## Getting Started
 
-The figures visible in the supplied screenshot and preview are display values, not independently audited results. Recalculate and validate them against the final cleaned dataset and Power BI model before using them in formal reporting.
+1. Clone the repository.
+2. Install dependencies:
 
-## Setup
+   ```bash
+   python -m pip install -r requirements.txt
+   ```
 
-### 1. Clone the repository
+3. Open `python/project_end.ipynb` in Jupyter Notebook or JupyterLab.
+4. Review and run `sql/ecommerce_sales_analysis.sql` in MySQL Workbench after configuring the database and loading the `orders` table.
+5. Open `dashboard/ecommerce_sales_dashboard.pbix` in Power BI Desktop. Update its data source and refresh the report if required.
 
-```bash
-git clone https://github.com/surajyadav011/PowerBI-Ecommerce-Analysis.git
-cd PowerBI-Ecommerce-Analysis
-```
+## Metric Notes
 
-### 2. Create a Python environment
+The notebook's `Profit` feature uses a fixed 20% of net amount. This is an assumed margin, not verified accounting profit. Review `docs/data-quality-notes.md` before interpreting results.
 
-Windows:
+## About Me
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
+I'm **Suraj**, a B.Tech AIML student interested in data analytics, business intelligence, and practical data projects. This repository documents my work with notebooks, data preparation, SQL analysis, and dashboard reporting.
 
-macOS/Linux:
+**Technologies:** #Jupyter #Pandas #MySQL #Python #PowerBI #DataAnalytics
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-### 3. Add the source workbook
-
-Place your licensed, privacy-reviewed input workbook at `data/Ecommerce_Unclean_Project.xlsx`. The notebook currently expects `Ecommerce_Unclean_Project.xlsx` in its working directory; either run the notebook from the directory containing the file or update the path to `../data/Ecommerce_Unclean_Project.xlsx`.
-
-The workbook should be uploaded to `data/Ecommerce_Unclean_Project.xlsx`. Review and anonymize personal data before publishing it publicly.
-
-### 4. Configure MySQL
-
-Create the `ecommerce` database in MySQL, then configure the connection using environment variables before running the notebook.
-
-PowerShell example:
-
-```powershell
-$env:ECOMMERCE_DB_USER = "root"
-$env:ECOMMERCE_DB_PASSWORD = "your-local-password"
-$env:ECOMMERCE_DB_HOST = "localhost"
-$env:ECOMMERCE_DB_PORT = "3306"
-$env:ECOMMERCE_DB_NAME = "ecommerce"
-jupyter notebook
-```
-
-For macOS/Linux, use `export VARIABLE=value` for the same variables.
-
-### 5. Run the notebook and SQL queries
-
-Open `python/project_end.ipynb` in Jupyter and execute the cells in order. Once the `orders` table is loaded, run `sql/ecommerce_sales_analysis.sql` in MySQL Workbench or another MySQL client.
-
-### 6. Open the Power BI report
-
-Open `dashboard/ecommerce_sales_dashboard.pbix` in Power BI Desktop once the original report file has been uploaded. Check data-source prompts and refresh the model before using the figures.
-
-## Data Cleaning and Metric Definitions
-
-The provided notebook performs duplicate removal, whitespace cleanup, basic email filtering, date parsing, numeric conversion, positive-quantity filtering, and missing-value handling.
-
-Current feature definitions:
-
-| Feature | Formula |
-|---|---|
-| `Sales` | `Qty × Unit_Price` |
-| `Net_Amount` | `Sales − (Sales × Discount / 100)` |
-| `Profit` | `Net_Amount × 0.20` |
-| `Month` | Month name derived from `Order_Date` |
-| `Year` | Year derived from `Order_Date` |
-| `Weekday` | Weekday name derived from `Order_Date` |
-
-**Metric caveat:** The submitted notebook estimates profit as 20% of net amount. It does not derive profit from product costs, shipping, returns, or operating expenses, so treat it as an assumed-margin estimate rather than verified business profit. The SQL monthly query includes year to avoid combining the same named month across multiple years.
-
-More notes are in [data-quality-notes.md](docs/data-quality-notes.md).
-
-## Example Business Questions
-
-- What is total net sales?
-- Which products and cities contribute the most sales?
-- How does sales performance vary by month and year?
-- Which products have the highest estimated profit under the stated margin assumption?
-- How are orders distributed across payment modes?
-- How many orders are marked as cancelled?
-
-## Limitations and Next Improvements
-
-- The public repository is only reproducible after all original dataset files have been uploaded and checked.
-- The email check only verifies that a value contains `@`; it is not full email validation.
-- Filling missing delivery dates with order dates can hide unknown delivery outcomes; preserve a missing-value flag for robust logistics analysis.
-- A flat 20% profit assumption should be replaced with defensible cost or margin data.
-- For multi-year data, sort monthly categories by a true date key rather than month-name text.
-- Add a data dictionary, automated validation checks, and an auditable KPI reconciliation between Python, SQL, and Power BI.
-- Export a sanitized sample dataset or synthetic fixture so the pipeline can be demonstrated without exposing personal data.
-
-## Author
-
-**Suraj**  
-B.Tech AIML Student | Data Analytics and Business Intelligence
-
-- GitHub: [@surajyadav011](https://github.com/surajyadav011)
-
----
-
-If you use or adapt this project, retain attribution and verify all assumptions against your own dataset.
+GitHub: [@surajyadav011](https://github.com/surajyadav011)
