@@ -1,48 +1,42 @@
--- E-Commerce Sales Performance Analysis
--- Database: MySQL
--- Expected table: orders, loaded by the Python notebook.
+CREATE DATABASE ecommerce;
+show databases;
 
-CREATE DATABASE IF NOT EXISTS ecommerce;
-USE ecommerce;
+use ecommerce;
+select * from orders;
 
--- Inspect sample rows and count table records
-SELECT * FROM orders LIMIT 20;
-SELECT COUNT(*) AS total_records FROM orders;
+select count(*) as Total_orders from orders;
 
--- Total net sales
-SELECT ROUND(SUM(Net_Amount), 2) AS total_net_sales
-FROM orders;
+-- Total Sales
+select sum(Net_amount) as Total_Sales from orders;
 
--- Product sales ranking
-SELECT Product, ROUND(SUM(Net_Amount), 2) AS net_sales
-FROM orders
-GROUP BY Product
-ORDER BY net_sales DESC;
+-- Top products
+select 
+product,sum(net_amount) as sales
+from orders
+group by product
+order by sales desc;
 
--- City sales ranking
-SELECT City, ROUND(SUM(Net_Amount), 2) AS net_sales
-FROM orders
-GROUP BY City
-ORDER BY net_sales DESC;
+-- Top cities
+select city,sum(net_amount) as sales
+from orders group by city
+order by sales desc;
 
--- Monthly sales, separated by year
-SELECT Year, Month, ROUND(SUM(Net_Amount), 2) AS net_sales
-FROM orders
-GROUP BY Year, Month
-ORDER BY Year, MIN(Order_Date);
+-- Monthly Sales
+select month,sum(net_amount) as Sales
+from orders
+group by month;
 
--- Estimated profit ranking
--- Important: the notebook currently models profit as 20% of Net_Amount.
-SELECT Product, ROUND(SUM(Profit), 2) AS estimated_profit
-FROM orders
-GROUP BY Product
-ORDER BY estimated_profit DESC;
+-- Highest Profit Products
+select product,
+round(sum(profit),1) as profit
+from orders
+group by product
+order by profit desc;
 
--- Payment mode distribution
-SELECT Payment_Mode, COUNT(*) AS total_records
-FROM orders
-GROUP BY Payment_Mode
-ORDER BY total_records DESC;
+-- payment mode distribution
+select payment_mode,count(*) as Total_orders
+from orders
+group by payment_mode;
 
 -- Cancelled orders
 SELECT *
