@@ -4,11 +4,11 @@ An end-to-end data analytics project combining **Python (Pandas, NumPy), MySQL, 
 
 > **Project scope:** The uploaded materials demonstrate a Python data-cleaning workflow, MySQL analysis queries, and a Power BI dashboard. The source workbook used by the notebook was not included, so the complete pipeline has not been rerun end-to-end in this repository.
 
-## Dashboard Preview
+## Dashboard
 
-The original dashboard screenshot is included unchanged in the local project ZIP. Its binary upload to GitHub is pending, so no recreated preview is shown here.
+![Original dashboard screenshot supplied by Suraj](dashboard/dashboard.png)
 
-The preview is a documentation illustration recreated from the supplied screenshot; it is not an image exported by Power BI. The supplied report layout shows KPI cards for Total Sales, Total Profit, Total Orders, and Average Order Value; monthly sales; sales by payment mode, order status, product, and category; profit by category; location visualization; and Month, City, and Payment Mode slicers.
+This README is configured to display the exact original dashboard screenshot supplied by Suraj. The screenshot file itself still needs to be uploaded to `dashboard/dashboard.png`; no generated or redesigned preview should be used. The supplied report layout shows KPI cards for Total Sales, Total Profit, Total Orders, and Average Order Value; monthly sales; sales by payment mode, order status, product, and category; profit by category; location visualization; and Month, City, and Payment Mode slicers.
 
 ## Tech Stack
 
@@ -31,20 +31,24 @@ The preview is a documentation illustration recreated from the supplied screensh
 ```text
 PowerBI-Ecommerce-Analysis/
 ├── data/
+│   ├── Ecommerce_Unclean_Project.xlsx
+│   ├── Clean_Ecommerce.csv
 │   ├── sample_ecommerce.csv
 │   └── README.md
 ├── dashboard/
-│   ├── dashboard-preview.svg
+│   ├── dashboard.png
+│   ├── ecommerce_sales_dashboard.pbix
 │   └── README.md
 ├── docs/
 │   └── data-quality-notes.md
-├── notebooks/
-│   └── ecommerce_sales_cleaning.ipynb
 ├── python/
+│   ├── project_end.ipynb
 │   ├── data_cleaning.py
 │   └── README.md
 ├── sql/
-│   └── ecommerce_sales_analysis.sql
+│   ├── ecommerce_sales_analysis.sql
+│   ├── mysql_queries.png
+│   └── README.md
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -95,7 +99,7 @@ pip install -r requirements.txt
 
 Place your licensed, privacy-reviewed input workbook at `data/Ecommerce_Unclean_Project.xlsx`. The notebook currently expects `Ecommerce_Unclean_Project.xlsx` in its working directory; either run the notebook from the directory containing the file or update the path to `../data/Ecommerce_Unclean_Project.xlsx`.
 
-The raw workbook is not included because it was not part of the supplied files. Do not commit real customer names, email addresses, phone numbers, or other personal data to a public repository.
+The workbook should be uploaded to `data/Ecommerce_Unclean_Project.xlsx`. Review and anonymize personal data before publishing it publicly.
 
 ### 4. Configure MySQL
 
@@ -116,11 +120,11 @@ For macOS/Linux, use `export VARIABLE=value` for the same variables.
 
 ### 5. Run the notebook and SQL queries
 
-Open `notebooks/ecommerce_sales_cleaning.ipynb` in Jupyter and execute the cells in order. Once the `orders` table is loaded, run `sql/ecommerce_sales_analysis.sql` in MySQL Workbench or another MySQL client.
+Open `python/project_end.ipynb` in Jupyter and execute the cells in order. Once the `orders` table is loaded, run `sql/ecommerce_sales_analysis.sql` in MySQL Workbench or another MySQL client.
 
 ### 6. Open the Power BI report
 
-The original `.pbix` file is not currently stored in this public repository. The handoff ZIP contains the supplied file; copy it to `dashboard/dashboard.pbix` and commit it from a local Git checkout before using this step. Once added, open it in Power BI Desktop, check any data-source prompts, and refresh the model.
+Open `dashboard/ecommerce_sales_dashboard.pbix` in Power BI Desktop once the original report file has been uploaded. Check data-source prompts and refresh the model before using the figures.
 
 ## Data Cleaning and Metric Definitions
 
@@ -152,7 +156,7 @@ More notes are in [data-quality-notes.md](docs/data-quality-notes.md).
 
 ## Limitations and Next Improvements
 
-- The original input workbook was not provided, so the notebook cannot be executed from a clean clone without adding the data file.
+- The public repository is only reproducible after all original dataset files have been uploaded and checked.
 - The email check only verifies that a value contains `@`; it is not full email validation.
 - Filling missing delivery dates with order dates can hide unknown delivery outcomes; preserve a missing-value flag for robust logistics analysis.
 - A flat 20% profit assumption should be replaced with defensible cost or margin data.
