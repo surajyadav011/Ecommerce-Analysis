@@ -1,0 +1,16 @@
+# Source data and generated exports
+data/*
+!data/README.md
+*.xlsx
+*.csv
+*.log
+*.tmp
+
+# Local environments and secrets
+.env
+.venv/
+venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
