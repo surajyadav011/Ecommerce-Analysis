@@ -1,11 +1,9 @@
-# Python Data Preparation
+# Python and Jupyter
 
-This folder contains the standalone Pandas cleaning script. Run from the repository root after installing `requirements.txt`:
+- `project_end.ipynb`: Jupyter notebook for the project workflow.
+- `data_cleaning.py`: standalone Pandas cleaning script.
+- `pandas_query.png`: original screenshot of the Python/Pandas notebook supplied for the project.
 
-```bash
-python python/data_cleaning.py
-```
+Install dependencies from the repository root with `python -m pip install -r requirements.txt`.
 
-Input: `data/Ecommerce_Unclean_Project.xlsx`. Output: `data/Clean_Ecommerce.csv`.
-
-The project estimates profit at 20% of net amount; this is an assumed margin, not verified accounting profit. See `docs/data-quality-notes.md`.
+The original workbook is not currently in the GitHub `data/` folder, so the complete notebook workflow may require adding the source dataset.
