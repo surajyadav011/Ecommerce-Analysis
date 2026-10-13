@@ -6,9 +6,9 @@ An end-to-end data analytics project combining **Python (Pandas, NumPy), MySQL, 
 
 ## Dashboard Preview
 
-![E-Commerce Sales Analysis Dashboard](dashboard/dashboard.png)
+![E-Commerce Sales Analysis Dashboard preview](dashboard/dashboard-preview.svg)
 
-The dashboard screenshot shows KPI cards for Total Sales, Total Profit, Total Orders, and Average Order Value; monthly sales; sales by payment mode, order status, product, and category; profit by category; location visualization; and Month, City, and Payment Mode slicers.
+The preview is a documentation illustration recreated from the supplied screenshot; it is not an image exported by Power BI. The supplied report layout shows KPI cards for Total Sales, Total Profit, Total Orders, and Average Order Value; monthly sales; sales by payment mode, order status, product, and category; profit by category; location visualization; and Month, City, and Payment Mode slicers.
 
 ## Tech Stack
 
@@ -33,8 +33,8 @@ PowerBI-Ecommerce-Analysis/
 ├── data/
 │   └── README.md
 ├── dashboard/
-│   ├── dashboard.pbix
-│   └── dashboard.png
+│   ├── dashboard-preview.svg
+│   └── README.md
 ├── docs/
 │   └── data-quality-notes.md
 ├── notebooks/
@@ -56,7 +56,7 @@ PowerBI-Ecommerce-Analysis/
 - **Geographic view:** Map visual
 - **Interactive filters:** Month, City, Payment Mode
 
-The figures visible in the screenshot are display values, not independently audited results. Recalculate and validate them against the final cleaned dataset and Power BI model before using them in formal reporting.
+The figures visible in the supplied screenshot and preview are display values, not independently audited results. Recalculate and validate them against the final cleaned dataset and Power BI model before using them in formal reporting.
 
 ## Setup
 
@@ -116,7 +116,7 @@ Open `notebooks/ecommerce_sales_cleaning.ipynb` in Jupyter and execute the cells
 
 ### 6. Open the Power BI report
 
-Open `dashboard/dashboard.pbix` in Power BI Desktop. Verify any data-source prompts and refresh the model after the data is available.
+The original `.pbix` file is not currently stored in this public repository. The handoff ZIP contains the supplied file; copy it to `dashboard/dashboard.pbix` and commit it from a local Git checkout before using this step. Once added, open it in Power BI Desktop, check any data-source prompts, and refresh the model.
 
 ## Data Cleaning and Metric Definitions
 
