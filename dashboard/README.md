@@ -1,5 +1,6 @@
-# Power BI Dashboard
+# Dashboard
 
-The README points to the original dashboard screenshot at `dashboard/dashboard.png`. Upload the original screenshot unchanged to that path; do not use a generated preview.
+- `dashboard.png`: original dashboard screenshot supplied for the project, unchanged.
+- `ecommerce_sales_dashboard.pbix`: Power BI report file.
 
-Place the supplied Power BI report at `dashboard/ecommerce_sales_dashboard.pbix`. The original binary assets are still pending upload to GitHub.
+Open the PBIX in Power BI Desktop and verify the data source before refreshing.
