@@ -1,0 +1,11 @@
+Order_ID,Order_Date,City,State,Product,Category,Qty,Unit_Price,Discount,Payment_Mode,Order_Status,Delivery_Date,Sales,Net_Amount,Profit,Month,Year,Weekday
+ORD1002,2025-06-30,Delhi,Delhi,Chair,Furniture,4,1999,0,UPI,Pending,2025-07-03,7996,7996,1599.2,June,2025,Monday
+ORD1003,2025-02-03,Pune,Maharashtra,Watch,Fashion,5,4999,20,Card,Pending,2025-02-09,24995,19996,3999.2,February,2025,Monday
+ORD1004,2025-05-06,Jaipur,Rajasthan,Mouse,Electronics,3,1999,5,COD,Returned,2025-05-09,5997,5697.15,1139.43,May,2025,Tuesday
+ORD1007,2025-02-10,Mumbai,Maharashtra,Mouse,Electronics,3,499,20,Wallet,Cancelled,2025-02-10,1497,1197.6,239.52,February,2025,Monday
+ORD1008,2025-02-17,Lucknow,Uttar Pradesh,Mouse,Electronics,4,9999,0,Card,Returned,2025-02-20,39996,39996,7999.2,February,2025,Monday
+ORD1011,2025-01-11,Jaipur,Rajasthan,Chair,Furniture,3,999,0,COD,Pending,2025-01-14,2997,2997,599.4,January,2025,Saturday
+ORD1012,2025-03-03,Jaipur,Rajasthan,Shoes,Fashion,3,999,5,COD,Cancelled,2025-03-09,2997,2847.15,569.43,March,2025,Monday
+ORD1016,2025-03-31,Pune,Maharashtra,Laptop,Electronics,3,4999,20,NetBanking,Pending,2025-04-04,14997,11997.6,2399.52,March,2025,Monday
+ORD1019,2025-03-06,Bengaluru,Karnataka,Chair,Furniture,3,1499,0,COD,Returned,2025-03-09,4497,4497,899.4,March,2025,Thursday
+ORD1020,2025-03-15,Pune,Maharashtra,Watch,Fashion,3,999,0,UPI,Returned,2025-03-15,2997,2997,599.4,March,2025,Saturday
