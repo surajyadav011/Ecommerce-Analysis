@@ -6,7 +6,7 @@ An end-to-end data analytics project combining **Python (Pandas, NumPy), MySQL, 
 
 ## Dashboard Preview
 
-![E-Commerce Sales Analysis Dashboard](images/powerbi_dashboard.png)
+![E-Commerce Sales Analysis Dashboard](dashboard/dashboard.png)
 
 The dashboard screenshot shows KPI cards for Total Sales, Total Profit, Total Orders, and Average Order Value; monthly sales; sales by payment mode, order status, product, and category; profit by category; location visualization; and Month, City, and Payment Mode slicers.
 
@@ -29,22 +29,18 @@ The dashboard screenshot shows KPI cards for Total Sales, Total Profit, Total Or
 ## Repository Structure
 
 ```text
-ecommerce-sales-performance/
+PowerBI-Ecommerce-Analysis/
 ├── data/
-│   └── README.md                       # Dataset placement and privacy notes
-├── docs/
-│   └── data-quality-notes.md           # Cleaning logic, assumptions, limitations
-├── images/
-│   ├── powerbi_dashboard.png           # Dashboard screenshot
-│   ├── python_data_preparation.png     # Notebook screenshot
-│   └── mysql_queries.png               # SQL screenshot
-├── notebooks/
-│   └── ecommerce_sales_cleaning.ipynb  # Python cleaning and MySQL-loading workflow
-├── powerbi/
-│   ├── ecommerce_sales_dashboard.pbix  # Power BI Desktop report
 │   └── README.md
+├── dashboard/
+│   ├── dashboard.pbix
+│   └── dashboard.png
+├── docs/
+│   └── data-quality-notes.md
+├── notebooks/
+│   └── ecommerce_sales_cleaning.ipynb
 ├── sql/
-│   └── ecommerce_sales_analysis.sql    # Business analysis queries
+│   └── ecommerce_sales_analysis.sql
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -120,7 +116,7 @@ Open `notebooks/ecommerce_sales_cleaning.ipynb` in Jupyter and execute the cells
 
 ### 6. Open the Power BI report
 
-Open `powerbi/ecommerce_sales_dashboard.pbix` in Power BI Desktop. Verify any data-source prompts and refresh the model after the data is available.
+Open `dashboard/dashboard.pbix` in Power BI Desktop. Verify any data-source prompts and refresh the model after the data is available.
 
 ## Data Cleaning and Metric Definitions
 
