@@ -6,7 +6,7 @@ An end-to-end data analytics project combining **Python (Pandas, NumPy), MySQL, 
 
 ## Dashboard Preview
 
-![E-Commerce Sales Analysis Dashboard preview](dashboard/dashboard-preview.svg)
+The original dashboard screenshot is included unchanged in the local project ZIP. Its binary upload to GitHub is pending, so no recreated preview is shown here.
 
 The preview is a documentation illustration recreated from the supplied screenshot; it is not an image exported by Power BI. The supplied report layout shows KPI cards for Total Sales, Total Profit, Total Orders, and Average Order Value; monthly sales; sales by payment mode, order status, product, and category; profit by category; location visualization; and Month, City, and Payment Mode slicers.
 
@@ -31,6 +31,7 @@ The preview is a documentation illustration recreated from the supplied screensh
 ```text
 PowerBI-Ecommerce-Analysis/
 ├── data/
+│   ├── sample_ecommerce.csv
 │   └── README.md
 ├── dashboard/
 │   ├── dashboard-preview.svg
@@ -39,6 +40,9 @@ PowerBI-Ecommerce-Analysis/
 │   └── data-quality-notes.md
 ├── notebooks/
 │   └── ecommerce_sales_cleaning.ipynb
+├── python/
+│   ├── data_cleaning.py
+│   └── README.md
 ├── sql/
 │   └── ecommerce_sales_analysis.sql
 ├── .gitignore
@@ -156,16 +160,10 @@ More notes are in [data-quality-notes.md](docs/data-quality-notes.md).
 - Add a data dictionary, automated validation checks, and an auditable KPI reconciliation between Python, SQL, and Power BI.
 - Export a sanitized sample dataset or synthetic fixture so the pipeline can be demonstrated without exposing personal data.
 
-## Tutorial Reference
-
-The project was developed with reference to this YouTube tutorial: [E-commerce analysis project](https://youtu.be/0AZV8Uff5Ic).
-
-The repository documents the files supplied for this project; the tutorial is a reference and is not a substitute for validating the code and metrics.
-
 ## Author
 
-**Suraj Yadav**  
-B.Tech AIML Student | Data Analytics, Business Intelligence, and Data Engineering
+**Suraj**  
+B.Tech AIML Student | Data Analytics and Business Intelligence
 
 - GitHub: [@surajyadav011](https://github.com/surajyadav011)
 
